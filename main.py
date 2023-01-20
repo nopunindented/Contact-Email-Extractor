@@ -20,5 +20,5 @@ for u in range(0, len(goodsites)):
     getsites.html.render(timeout=20)
 
     emails = re.findall(
-        "([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)", r.html.raw_html.decode())
+        "([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)", getsites.html.raw_html.decode())
     print(emails)
