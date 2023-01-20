@@ -1,5 +1,7 @@
 import re
 from requests_html import HTMLSession
+from bs4 import *
+import requests
 
 try:
     from googlesearch import search
@@ -15,10 +17,8 @@ for j in search(query, num=8, stop=8, pause=2):
         goodsites.append(j)
 
 for u in range(0, len(goodsites)):
-    session = HTMLSession()
-    getsites = session.get(goodsites[u])
-    getsites.html.render(timeout=20)
-
+    htmltry = HTMLSession()
+    getsites = htmltry.get(goodsites[u])
     emails = re.findall(
         "([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)", getsites.html.raw_html.decode())
     if len(emails) > 0:
