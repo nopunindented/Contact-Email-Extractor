@@ -12,7 +12,7 @@ except ImportError:
 company_name = input('Enter company name: ')
 query = company_name + ' contact us'
 goodsites = []
-for j in search(query, num=8, stop=8, pause=2):
+for j in search(query, num=6, stop=6, pause=2):
     if '/ca/' and 'contact' in j:
         goodsites.append(j)
 
